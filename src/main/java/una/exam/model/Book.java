@@ -23,7 +23,7 @@ import javax.persistence.UniqueConstraint;
  */
 
 @Entity
-@Table(name = "book", catalog = "progra3_exam2", uniqueConstraints = {
+@Table(name = "book", catalog = "progra3_exa2", uniqueConstraints = {
     @UniqueConstraint(columnNames = "idBook")})
 public class Book implements Serializable {
     @Id
@@ -46,7 +46,7 @@ public class Book implements Serializable {
     @Temporal(TemporalType.DATE)
     private Date dateRelease;
     
-    @Column(name = "price", nullable = false)
+     @Column(name = "price", unique = false, nullable = false)
     private float price;
 
     public Book() {

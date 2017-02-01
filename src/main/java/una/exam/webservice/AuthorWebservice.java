@@ -74,7 +74,7 @@ public class AuthorWebservice {
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    AuthorContact createAuthor(AuthorContact authorContact){
+    public AuthorContact createAuthor(AuthorContact authorContact){
         authorDAO = new AuthorDAOImpl();
         authorService = new AuthorServiceImpl(authorDAO);
         authorContact = authorService.save(authorContact);

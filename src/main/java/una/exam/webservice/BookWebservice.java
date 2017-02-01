@@ -66,7 +66,7 @@ public class BookWebservice {
     
     @GET
     @Path("/") 
-    float getTotalPrice(){
+    public float getTotalPrice(){
         float total = 0;
         bookDAO = new BookDAOImpl();
         bookService = new BookServiceImpl(bookDAO);

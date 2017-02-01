@@ -16,7 +16,7 @@ import javax.persistence.UniqueConstraint;
  */
 
 @Entity
-@Table(name = "booktype", catalog = "progra3_exam2", uniqueConstraints = {
+@Table(name = "booktype", catalog = "progra3_exa2", uniqueConstraints = {
     @UniqueConstraint(columnNames = "idType")})
 public class BookType implements Serializable {
     @Id
