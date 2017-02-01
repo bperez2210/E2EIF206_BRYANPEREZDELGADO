@@ -52,7 +52,7 @@ public class AuthorWebservice {
     @GET
     @Path("/{name}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Author getAuthorByName(@PathParam("name") String name){
+    public Author getAuthorByName(@PathParam("name")String name){
         Author author = null;
         authorDAO = new AuthorDAOImpl();
         authorService = new AuthorServiceImpl(authorDAO);

@@ -34,13 +34,14 @@ public class BookTypeDAOImpl implements BookTypeDAO{
 
     @Override
     public BookType findByName(String name) {
-        BookType bookType = null;
-        Query query = session.createQuery("from booktype where name = :name ");
-        query.setParameter("name", name);
-        if (query.list().size() > 0) {
-            bookType = (BookType) query.list().get(0);
+        List<BookType> bookTypeList = new ArrayList<>();
+        bookTypeList = session.createCriteria(BookType.class).list();
+        for(BookType bookType : bookTypeList){
+            if(bookType.getType().equals(name)){
+                return bookType;
+            }
         }
-        return bookType;
+        return null;
     }
     
 }

@@ -19,13 +19,14 @@ public class AuthorDAOImpl implements AuthorDAO{
     
     @Override
     public Author findByName(String name) {
-        Author author = null;
-        Query query =  session.createQuery("from author where name = :name ");
-        query.setParameter("name", name);
-        if (query.list().size() > 0) {
-            author = (Author) query.list().get(0);
+        List<Author> authorList = new ArrayList<>();
+        authorList = session.createCriteria(Author.class).list();
+        for(Author author : authorList){
+            if(author.getName().equals(name)){
+                return author;
+            }
         }
-        return author;
+        return null;
     }
     
 }

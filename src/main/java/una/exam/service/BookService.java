@@ -14,5 +14,5 @@ public interface BookService {
     boolean deleteAll();
     Book save(Book book);
     List<Book> findAll();
-    float totalPriceAll();
+    Float totalPriceAll();
 }

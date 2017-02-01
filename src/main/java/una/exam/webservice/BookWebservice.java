@@ -11,6 +11,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.GenericType;
 import una.exam.dao.BookDAO;
 import una.exam.dao.BookDAOImpl;
 import una.exam.model.Book;
@@ -55,7 +56,6 @@ public class BookWebservice {
     
     @GET
     @Path("/")
-    @Produces(MediaType.APPLICATION_JSON)
     public List<Book> getAllBooks(){
         List<Book> booksList = null;
         bookDAO = new BookDAOImpl();
@@ -65,14 +65,15 @@ public class BookWebservice {
     }
     
     @GET
-    @Path("/totalprice")
-    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/price")
     public float getTotalPrice(){
-        float total = 0;
+        Float total;
         bookDAO = new BookDAOImpl();
         bookService = new BookServiceImpl(bookDAO);
         total = bookService.totalPriceAll();
+        System.out.println(total);
         return total;
+        
     }
     
     
