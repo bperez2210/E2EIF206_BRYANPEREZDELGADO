@@ -65,7 +65,8 @@ public class BookWebservice {
     }
     
     @GET
-    @Path("/") 
+    @Path("/totalprice")
+    @Produces(MediaType.APPLICATION_JSON)
     public float getTotalPrice(){
         float total = 0;
         bookDAO = new BookDAOImpl();

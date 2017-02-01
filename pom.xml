@@ -3,8 +3,10 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>una.exam</groupId>
     <artifactId>E2EIF206_BRYANPEREZDELGADO</artifactId>
-    <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>E2EIF206_BRYANPEREZDELGADO</name>
+    
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
@@ -15,7 +17,8 @@
         <jaxrs.version>2.0.1</jaxrs.version>
     </properties>
     
-    <repositories>
+   
+   <repositories>
         <repository>
             <id>JBoss repository</id>
             <url>http://repository.jboss.com/maven2/</url>
@@ -166,11 +169,6 @@
             <groupId>org.glassfish.jersey.media</groupId>
             <artifactId>jersey-media-moxy</artifactId>
             <version>2.13</version>
-        </dependency>
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
-            <version>4.3.1.Final</version>
         </dependency>
     </dependencies>
     
