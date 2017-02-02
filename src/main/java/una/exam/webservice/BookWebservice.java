@@ -19,7 +19,7 @@ import una.exam.service.BookService;
 import una.exam.service.BookServiceImpl;
 /**
  *
- * @author Bryan
+ * @author Bryan Pérez Delgado
  */
 
 @Path("books")
@@ -30,9 +30,16 @@ public class BookWebservice {
     @Context
     private UriInfo context;
 
+    /**
+     *
+     */
     public BookWebservice() {
     }
     
+    /**
+     *
+     * @return
+     */
     @DELETE
     @Path("/")
     public boolean deleteAll(){
@@ -43,6 +50,11 @@ public class BookWebservice {
         return result;
     }
     
+    /**
+     *
+     * @param book
+     * @return
+     */
     @POST
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -54,6 +66,10 @@ public class BookWebservice {
         return book;  
     }
     
+    /**
+     *
+     * @return
+     */
     @GET
     @Path("/")
     public List<Book> getAllBooks(){
@@ -64,8 +80,12 @@ public class BookWebservice {
         return booksList;
     }
     
+    /**
+     *
+     * @return
+     */
     @GET
-    @Path("/price")
+    @Path("/totalprice")
     public float getTotalPrice(){
         Float total;
         bookDAO = new BookDAOImpl();

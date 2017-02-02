@@ -6,12 +6,28 @@ import una.exam.model.AuthorContact;
 
 /**
  *
- * @author Bryan
+ * @author Bryan Pérez Delgado
  */
 
 
 public interface AuthorContactDAO {
+
+    /**
+     *
+     * @return
+     */
     boolean deleteAll();
+
+    /**
+     *
+     * @param authorContact
+     * @return
+     */
     AuthorContact save(AuthorContact authorContact);
+
+    /**
+     *
+     * @return
+     */
     List<AuthorContact> findAll();
 }

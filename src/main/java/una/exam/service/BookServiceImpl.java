@@ -7,44 +7,75 @@ import una.exam.model.Book;
 
 /**
  *
- * @author Bryan
+ * @author Bryan Pérez Delgado
  */
 
 
 public class BookServiceImpl implements BookService{
     private BookDAO bookDAO;
 
+    /**
+     *
+     */
     public BookServiceImpl() {
     }
 
+    /**
+     *
+     * @param bookDAO
+     */
     public BookServiceImpl(BookDAO bookDAO) {
         this.bookDAO = bookDAO;
     }
 
+    /**
+     *
+     * @return
+     */
     public BookDAO getBookDAO() {
         return bookDAO;
     }
 
+    /**
+     *
+     * @param bookDAO
+     */
     public void setBookDAO(BookDAO bookDAO) {
         this.bookDAO = bookDAO;
     }
    
-    
+    /**
+     *
+     * @return
+     */
     @Override
     public boolean deleteAll() {
         return bookDAO.deleteAll();
     }
 
+    /**
+     *
+     * @param book
+     * @return
+     */
     @Override
     public Book save(Book book) {
         return bookDAO.save(book);
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public List<Book> findAll() {
         return bookDAO.findAll();
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public Float totalPriceAll() {
         List<Book> books = findAll();

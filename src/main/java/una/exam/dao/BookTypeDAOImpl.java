@@ -9,13 +9,17 @@ import una.exam.model.BookType;
 
 /**
  *
- * @author Bryan
+ * @author Bryan Pérez Delgado
  */
 
 
 public class BookTypeDAOImpl implements BookTypeDAO{
     private final Session session = HibernateUtil.getSessionFactory().openSession();
     
+    /**
+     *
+     * @return
+     */
     @Override
     public boolean deleteAll() {
         List<BookType> bookTypeList = new ArrayList<>();
@@ -24,6 +28,11 @@ public class BookTypeDAOImpl implements BookTypeDAO{
         return (bookTypeList.isEmpty());
     }
 
+    /**
+     *
+     * @param bookType
+     * @return
+     */
     @Override
     public BookType save(BookType bookType) {
         session.beginTransaction();
@@ -32,6 +41,11 @@ public class BookTypeDAOImpl implements BookTypeDAO{
         return bookType; 
     }
 
+    /**
+     *
+     * @param name
+     * @return
+     */
     @Override
     public BookType findByName(String name) {
         List<BookType> bookTypeList = new ArrayList<>();

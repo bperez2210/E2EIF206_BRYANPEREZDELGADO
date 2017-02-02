@@ -9,13 +9,17 @@ import una.exam.model.Book;
 
 /**
  *
- * @author Bryan
+ * @author Bryan Pérez Delgado
  */
 
 
 public class BookDAOImpl implements BookDAO{
     private final Session session = HibernateUtil.getSessionFactory().openSession();
     
+    /**
+     *
+     * @return
+     */
     @Override
     public boolean deleteAll() {
         session.beginTransaction();
@@ -24,6 +28,11 @@ public class BookDAOImpl implements BookDAO{
         return true;
     }
 
+    /**
+     *
+     * @param book
+     * @return
+     */
     @Override
     public Book save(Book book) {
         session.beginTransaction();
@@ -32,6 +41,10 @@ public class BookDAOImpl implements BookDAO{
         return book;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public List<Book> findAll() {
         List<Book> bookList = new ArrayList<>();

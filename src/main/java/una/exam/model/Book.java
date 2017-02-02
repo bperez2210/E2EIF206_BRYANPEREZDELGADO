@@ -19,7 +19,7 @@ import javax.persistence.TemporalType;
 import javax.persistence.UniqueConstraint;
 /**
  *
- * @author Bryan
+ * @author Bryan Pérez Delgado
  */
 
 @Entity
@@ -32,12 +32,12 @@ public class Book implements Serializable {
     private int idBook;
     
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "idAuthor", nullable = false)
-    private Author idAuthor;
+    @JoinColumn(name = "author", nullable = false)
+    private Author author;
     
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = "idType", nullable = false)
-    private BookType idType;
+    @JoinColumn(name = "type", nullable = false)
+    private BookType type;
     
     @Column(name = "name", unique = false, nullable = false)
     private String name;
@@ -49,70 +49,132 @@ public class Book implements Serializable {
      @Column(name = "price", unique = false, nullable = false)
     private float price;
 
+    /**
+     *
+     */
     public Book() {
     }
 
-    public Book(int idBook, Author idAuthor, BookType idType, String name, Date dateRelease, float price) {
+    /**
+     *
+     * @param idBook
+     * @param author
+     * @param type
+     * @param name
+     * @param dateRelease
+     * @param price
+     */
+    public Book(int idBook, Author author, BookType type, String name, Date dateRelease, float price) {
         this.idBook = idBook;
-        this.idAuthor = idAuthor;
-        this.idType = idType;
+        this.author = author;
+        this.type = type;
         this.name = name;
         this.dateRelease = dateRelease;
         this.price = price;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getIdBook() {
         return idBook;
     }
 
+    /**
+     *
+     * @param idBook
+     */
     public void setIdBook(int idBook) {
         this.idBook = idBook;
     }
 
-    public Author getIdAuthor() {
-        return idAuthor;
+    /**
+     *
+     * @return
+     */
+    public Author getAuthor() {
+        return author;
     }
 
-    public void setIdAuthor(Author idAuthor) {
-        this.idAuthor = idAuthor;
+    /**
+     *
+     * @param author
+     */
+    public void setAuthor(Author author) {
+        this.author = author;
     }
 
-    public BookType getIdType() {
-        return idType;
+    /**
+     *
+     * @return
+     */
+    public BookType getType() {
+        return type;
     }
 
-    public void setIdType(BookType idType) {
-        this.idType = idType;
+    /**
+     *
+     * @param type
+     */
+    public void setType(BookType type) {
+        this.type = type;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     *
+     * @param name
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     *
+     * @return
+     */
     public Date getDateRelease() {
         return dateRelease;
     }
 
+    /**
+     *
+     * @param dateRelease
+     */
     public void setDateRelease(Date dateRelease) {
         this.dateRelease = dateRelease;
     }
 
+    /**
+     *
+     * @return
+     */
     public float getPrice() {
         return price;
     }
 
+    /**
+     *
+     * @param price
+     */
     public void setPrice(float price) {
         this.price = price;
     }
 
     @Override
     public String toString() {
-        return "Book{" + "idBook=" + idBook + ", idAuthor=" + idAuthor + ", idType=" + idType + ", name=" + name + ", dateRelease=" + dateRelease + ", price=" + price + '}';
+        return "Book{" + "idBook=" + idBook + ", author=" + author + ", type=" + type + ", name=" + name + ", dateRelease=" + dateRelease + ", price=" + price + '}';
     }
+
+
     
     
     
@@ -121,9 +183,9 @@ public class Book implements Serializable {
     public int hashCode() {
         int hash = 5;
         hash = 89 * hash + this.idBook;
-        hash = 89 * hash + Objects.hashCode(this.idAuthor);
+        hash = 89 * hash + Objects.hashCode(this.author);
         hash = 89 * hash + Objects.hashCode(this.idBook);
-        hash = 89 * hash + Objects.hashCode(this.idType);
+        hash = 89 * hash + Objects.hashCode(this.type);
         hash = 89 * hash + Objects.hashCode(this.dateRelease);
         hash = 89 * hash + Objects.hashCode(this.name);
         hash = 89 * hash + Objects.hashCode(this.price);
@@ -145,10 +207,10 @@ public class Book implements Serializable {
         if (this.idBook != other.idBook) {
             return false;
         }
-        if (!Objects.equals(this.idAuthor, other.idAuthor)) {
+        if (!Objects.equals(this.author, other.author)) {
             return false;
         }
-        if (!Objects.equals(this.idType, other.idType)) {
+        if (!Objects.equals(this.type, other.type)) {
             return false;
         }
         if (!Objects.equals(this.name, other.name)) {

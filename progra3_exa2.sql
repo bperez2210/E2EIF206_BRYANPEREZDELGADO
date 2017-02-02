@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-02-2017 a las 20:16:43
+-- Tiempo de generación: 02-02-2017 a las 04:25:02
 -- Versión del servidor: 5.7.14
 -- Versión de PHP: 5.6.25
 
@@ -36,7 +36,7 @@ CREATE TABLE `author` (
 --
 
 INSERT INTO `author` (`idAuthor`, `name`) VALUES
-(1, 'Ivan Ceciliano Robles'),
+(1, 'JK Mike'),
 (2, 'Gabriel García Márquez'),
 (3, 'Antonio Gamoneda'),
 (4, 'Jean-Marie Le Clézio'),
@@ -49,8 +49,8 @@ INSERT INTO `author` (`idAuthor`, `name`) VALUES
 --
 
 CREATE TABLE `authorcontact` (
-  `idAuthorcontact` int(11) NOT NULL,
-  `idAuthor` int(11) NOT NULL,
+  `idAuthorContact` int(11) NOT NULL,
+  `author` int(11) NOT NULL,
   `contact` text NOT NULL,
   `type` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -59,12 +59,8 @@ CREATE TABLE `authorcontact` (
 -- Volcado de datos para la tabla `authorcontact`
 --
 
-INSERT INTO `authorcontact` (`idAuthorcontact`, `idAuthor`, `contact`, `type`) VALUES
-(1, 1, 'consult.opinions@gmail.com', 'email'),
-(2, 2, 'reactions@editorial.com', 'email'),
-(3, 3, 'e-editorial@opinions.com', 'email'),
-(4, 4, 'booksOwners@hotmail.com', 'email'),
-(5, 5, 'e-books@gmail.com', 'email');
+INSERT INTO `authorcontact` (`idAuthorContact`, `author`, `contact`, `type`) VALUES
+(7, 1, '223234234', 'casa');
 
 -- --------------------------------------------------------
 
@@ -74,8 +70,8 @@ INSERT INTO `authorcontact` (`idAuthorcontact`, `idAuthor`, `contact`, `type`) V
 
 CREATE TABLE `book` (
   `idBook` int(11) NOT NULL,
-  `idAuthor` int(11) NOT NULL,
-  `idType` int(11) NOT NULL,
+  `author` int(11) NOT NULL,
+  `type` int(11) NOT NULL,
   `name` text NOT NULL,
   `dateRelease` date NOT NULL,
   `price` float NOT NULL
@@ -85,12 +81,9 @@ CREATE TABLE `book` (
 -- Volcado de datos para la tabla `book`
 --
 
-INSERT INTO `book` (`idBook`, `idAuthor`, `idType`, `name`, `dateRelease`, `price`) VALUES
-(1, 1, 1, 'Paper Towns', '2013-07-01', 9000),
-(2, 2, 2, 'Padagogy of the Oppressed', '2013-10-15', 13000),
-(3, 3, 3, 'Peculiar Children', '2016-06-15', 10000),
-(4, 4, 4, 'The C++ Programing Lenguage', '2010-07-01', 25000),
-(5, 5, 4, 'CODE COMPLETE', '2011-07-01', 20000);
+INSERT INTO `book` (`idBook`, `author`, `type`, `name`, `dateRelease`, `price`) VALUES
+(6, 1, 6, 'Harry Potter', '2016-11-01', 1000),
+(7, 1, 1, 'Harri Potter 2', '2016-12-01', 1200);
 
 -- --------------------------------------------------------
 
@@ -108,10 +101,13 @@ CREATE TABLE `booktype` (
 --
 
 INSERT INTO `booktype` (`idType`, `type`) VALUES
-(1, 'educacion'),
+(1, 'Drama'),
 (2, 'juvenil'),
 (3, 'cuentos'),
-(4, 'computacion');
+(4, 'computacion'),
+(5, 'Drama'),
+(6, 'Drama'),
+(7, 'Drama');
 
 --
 -- Índices para tablas volcadas
@@ -127,7 +123,7 @@ ALTER TABLE `author`
 -- Indices de la tabla `authorcontact`
 --
 ALTER TABLE `authorcontact`
-  ADD PRIMARY KEY (`idAuthorcontact`);
+  ADD PRIMARY KEY (`idAuthorContact`);
 
 --
 -- Indices de la tabla `book`
@@ -154,17 +150,17 @@ ALTER TABLE `author`
 -- AUTO_INCREMENT de la tabla `authorcontact`
 --
 ALTER TABLE `authorcontact`
-  MODIFY `idAuthorcontact` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idAuthorContact` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `book`
 --
 ALTER TABLE `book`
-  MODIFY `idBook` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idBook` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `booktype`
 --
 ALTER TABLE `booktype`
-  MODIFY `idType` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idType` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

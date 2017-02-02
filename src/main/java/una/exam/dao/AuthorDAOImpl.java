@@ -10,13 +10,18 @@ import una.exam.model.Author;
 
 /**
  *
- * @author Bryan
+ * @author Bryan Pérez Delgado
  */
 
 
 public class AuthorDAOImpl implements AuthorDAO{
     private final Session session = HibernateUtil.getSessionFactory().openSession();
     
+    /**
+     *
+     * @param name
+     * @return
+     */
     @Override
     public Author findByName(String name) {
         List<Author> authorList = new ArrayList<>();

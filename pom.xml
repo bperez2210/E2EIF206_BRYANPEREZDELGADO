@@ -2,10 +2,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>una.exam</groupId>
-    <artifactId>E2EIF206_BRYANPEREZDELGADO</artifactId>
+    <artifactId>ExamenParcial2</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
-    <name>E2EIF206_BRYANPEREZDELGADO</name>
+    <name>ExamenParcial2</name>
     
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -173,7 +173,7 @@
     </dependencies>
     
     <build>
-        <finalName>E2EIF206_BRYANPEREZDELGADO</finalName>
+        <finalName>ExamenParcial2</finalName>
         <plugins>
 
             <!-- Set a compiler level -->

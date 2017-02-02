@@ -12,7 +12,7 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 /**
  *
- * @author Bryan
+ * @author Bryan Pérez Delgado
  */
 
 @Entity
@@ -27,27 +27,50 @@ public class BookType implements Serializable {
     @Column(name = "type", unique = false, nullable = false)
     private String type;
 
+    /**
+     *
+     */
     public BookType() {
     }
 
+    /**
+     *
+     * @param idType
+     * @param type
+     */
     public BookType(int idType, String type) {
         this.idType = idType;
         this.type = type;
     }
     
-
+    /**
+     *
+     * @return
+     */
     public int getIdType() {
         return idType;
     }
 
+    /**
+     *
+     * @param idType
+     */
     public void setIdType(int idType) {
         this.idType = idType;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getType() {
         return type;
     }
 
+    /**
+     *
+     * @param type
+     */
     public void setType(String type) {
         this.type = type;
     }

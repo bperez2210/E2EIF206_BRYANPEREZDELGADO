@@ -23,7 +23,7 @@ import una.exam.dao.AuthorDAOImpl;
 import una.exam.service.AuthorServiceImpl;
 /**
  *
- * @author Bryan
+ * @author Bryan Pérez Delgado
  */
 
 @Path("authors")
@@ -35,9 +35,16 @@ public class AuthorWebservice {
     @Context
     private UriInfo context;
 
+    /**
+     *
+     */
     public AuthorWebservice() {
     }
     
+    /**
+     *
+     * @return
+     */
     @GET
     @Path("/")
     @Produces(MediaType.APPLICATION_JSON)
@@ -49,6 +56,11 @@ public class AuthorWebservice {
         return authorsList;
     }
     
+    /**
+     *
+     * @param name
+     * @return
+     */
     @GET
     @Path("/{name}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -60,23 +72,33 @@ public class AuthorWebservice {
         return author;
     }
     
+    /**
+     *
+     * @return
+     */
     @DELETE
     @Path("/")
     public boolean deleteAll(){
         boolean result;
         authorDAO = new AuthorDAOImpl();
-        authorService = new AuthorServiceImpl(authorDAO);
+        authorContactDAO = new AuthorContactDAOImpl();
+        authorService = new AuthorServiceImpl(authorDAO,authorContactDAO);
         result = authorService.deleteAll();
         return result;
     }
     
+    /**
+     *
+     * @param authorContact
+     * @return
+     */
     @POST
     @Path("/")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public AuthorContact createAuthor(AuthorContact authorContact){
-        authorDAO = new AuthorDAOImpl();
-        authorService = new AuthorServiceImpl(authorDAO);
+        authorContactDAO = new AuthorContactDAOImpl();
+        authorService = new AuthorServiceImpl(authorContactDAO);
         authorContact = authorService.save(authorContact);
         return authorContact;
     }
