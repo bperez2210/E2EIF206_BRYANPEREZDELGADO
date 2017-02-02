@@ -3,6 +3,7 @@ package una.exam.dao;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import una.exam.model.Book;
 
@@ -17,10 +18,10 @@ public class BookDAOImpl implements BookDAO{
     
     @Override
     public boolean deleteAll() {
-        List<Book> bookList = new ArrayList<>();
-        bookList = session.createCriteria(Book.class).list();
-        bookList.clear();
-        return (bookList.isEmpty());
+        session.beginTransaction();
+        session.createSQLQuery("DELETE FROM book").executeUpdate();
+        session.getTransaction().commit();
+        return true;
     }
 
     @Override

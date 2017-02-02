@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-02-2017 a las 02:35:52
+-- Tiempo de generación: 01-02-2017 a las 20:16:43
 -- Versión del servidor: 5.7.14
 -- Versión de PHP: 5.6.25
 
@@ -31,6 +31,17 @@ CREATE TABLE `author` (
   `name` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `author`
+--
+
+INSERT INTO `author` (`idAuthor`, `name`) VALUES
+(1, 'Ivan Ceciliano Robles'),
+(2, 'Gabriel García Márquez'),
+(3, 'Antonio Gamoneda'),
+(4, 'Jean-Marie Le Clézio'),
+(5, 'José Emilio Pacheco');
+
 -- --------------------------------------------------------
 
 --
@@ -40,9 +51,20 @@ CREATE TABLE `author` (
 CREATE TABLE `authorcontact` (
   `idAuthorcontact` int(11) NOT NULL,
   `idAuthor` int(11) NOT NULL,
-  `contac` text NOT NULL,
+  `contact` text NOT NULL,
   `type` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `authorcontact`
+--
+
+INSERT INTO `authorcontact` (`idAuthorcontact`, `idAuthor`, `contact`, `type`) VALUES
+(1, 1, 'consult.opinions@gmail.com', 'email'),
+(2, 2, 'reactions@editorial.com', 'email'),
+(3, 3, 'e-editorial@opinions.com', 'email'),
+(4, 4, 'booksOwners@hotmail.com', 'email'),
+(5, 5, 'e-books@gmail.com', 'email');
 
 -- --------------------------------------------------------
 
@@ -59,6 +81,17 @@ CREATE TABLE `book` (
   `price` float NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `book`
+--
+
+INSERT INTO `book` (`idBook`, `idAuthor`, `idType`, `name`, `dateRelease`, `price`) VALUES
+(1, 1, 1, 'Paper Towns', '2013-07-01', 9000),
+(2, 2, 2, 'Padagogy of the Oppressed', '2013-10-15', 13000),
+(3, 3, 3, 'Peculiar Children', '2016-06-15', 10000),
+(4, 4, 4, 'The C++ Programing Lenguage', '2010-07-01', 25000),
+(5, 5, 4, 'CODE COMPLETE', '2011-07-01', 20000);
+
 -- --------------------------------------------------------
 
 --
@@ -69,6 +102,16 @@ CREATE TABLE `booktype` (
   `idType` int(11) NOT NULL,
   `type` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `booktype`
+--
+
+INSERT INTO `booktype` (`idType`, `type`) VALUES
+(1, 'educacion'),
+(2, 'juvenil'),
+(3, 'cuentos'),
+(4, 'computacion');
 
 --
 -- Índices para tablas volcadas
@@ -106,22 +149,22 @@ ALTER TABLE `booktype`
 -- AUTO_INCREMENT de la tabla `author`
 --
 ALTER TABLE `author`
-  MODIFY `idAuthor` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idAuthor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `authorcontact`
 --
 ALTER TABLE `authorcontact`
-  MODIFY `idAuthorcontact` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idAuthorcontact` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `book`
 --
 ALTER TABLE `book`
-  MODIFY `idBook` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idBook` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `booktype`
 --
 ALTER TABLE `booktype`
-  MODIFY `idType` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idType` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

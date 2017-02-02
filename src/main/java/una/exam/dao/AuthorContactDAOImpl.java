@@ -18,10 +18,10 @@ public class AuthorContactDAOImpl implements AuthorContactDAO{
     
     @Override
     public boolean deleteAll() {
-        List<AuthorContact> authorContactList = new ArrayList<>();
-        authorContactList = session.createCriteria(AuthorContact.class).list();
-        authorContactList.clear();
-        return (authorContactList.isEmpty());
+        session.beginTransaction();
+        session.createSQLQuery("DELETE FROM authorcontact").executeUpdate();
+        session.getTransaction().commit();
+        return true;
     }
 
     @Override
