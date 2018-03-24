@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 23/03/2018 10:37:52 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="cr.kaytes.modelo.Producto" table="PRODUCTO" schema="ADMIN" optimistic-lock="version">
+        <id name="pkIdproducto" type="int">
+            <column name="PK_IDPRODUCTO" precision="5" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="tipoProducto" type="string">
+            <column name="TIPO_PRODUCTO" length="10" not-null="true" unique="true" />
+        </property>
+        <set name="articulos" table="ARTICULO" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="FK_IDPRODUCTO" precision="5" scale="0" not-null="true" />
+            </key>
+            <one-to-many class="cr.kaytes.modelo.Articulo" />
+        </set>
+    </class>
+</hibernate-mapping>
