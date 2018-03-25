@@ -1,5 +1,5 @@
 package cr.kaytes.modelo;
-// Generated 23/03/2018 10:37:51 AM by Hibernate Tools 4.3.1
+// Generated Mar 25, 2018 5:41:35 PM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;

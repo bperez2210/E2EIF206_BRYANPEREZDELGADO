@@ -1,5 +1,5 @@
 package cr.kaytes.modelo;
-// Generated 23/03/2018 10:37:51 AM by Hibernate Tools 4.3.1
+// Generated Mar 25, 2018 5:41:35 PM by Hibernate Tools 4.3.1
 
 
 import java.math.BigDecimal;
@@ -25,7 +25,7 @@ public class Articulo  implements java.io.Serializable {
      private Marca marca;
      private Producto producto;
      private int codigo;
-     private Byte talla;
+     private String talla;
      private String genero;
      private String color;
      private BigDecimal precio;
@@ -44,7 +44,7 @@ public class Articulo  implements java.io.Serializable {
         this.precio = precio;
         this.estado = estado;
     }
-    public Articulo(int pkIdarticulo, Marca marca, Producto producto, int codigo, Byte talla, String genero, String color, BigDecimal precio, String estado) {
+    public Articulo(int pkIdarticulo, Marca marca, Producto producto, int codigo, String talla, String genero, String color, BigDecimal precio, String estado) {
        this.pkIdarticulo = pkIdarticulo;
        this.marca = marca;
        this.producto = producto;
@@ -99,12 +99,12 @@ public class Articulo  implements java.io.Serializable {
     }
 
     
-    @Column(name="TALLA", precision=2, scale=0)
-    public Byte getTalla() {
+    @Column(name="TALLA", length=2)
+    public String getTalla() {
         return this.talla;
     }
     
-    public void setTalla(Byte talla) {
+    public void setTalla(String talla) {
         this.talla = talla;
     }
 
