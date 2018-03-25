@@ -9,16 +9,16 @@ package cr.kaytes.vista;
  *
  * @author bperez2210
  */
-public class InventarioVista extends javax.swing.JFrame {
+public class Inventario extends javax.swing.JFrame {
 
     /**
      * Creates new form Inventario
      */
-    public InventarioVista() {
+    public Inventario() {
         initComponents();
     }
     
-    public InventarioVista(String title) {
+    public Inventario(String title) {
         initComponents();
         setTitle(title);
     }
