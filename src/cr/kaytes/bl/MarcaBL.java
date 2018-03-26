@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cr.kayles.bl;
+package cr.kaytes.bl;
 
 import cr.kaytes.modelo.Marca;
 import java.util.List;
@@ -29,12 +29,12 @@ public class MarcaBL extends BaseBL implements IBaseBL<Marca,String>{
 
     @Override
     public void delete(String key) {
-        this.getDAO("cr.or.uccaep.domain.Marca").delete(key);  
+        this.getDAO("cr.kaytes.modelo.Marca").delete(key);  
     }
 
     @Override
     public List<Marca> findAll() {
-        return this.getDAO("cr.or.uccaep.domain.Marca").findAll();
+        return this.getDAO("cr.kaytes.modelo.Marca").findAll();
     }
 
 

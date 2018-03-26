@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cr.kayles.bl;
+package cr.kaytes.bl;
 
 import cr.kaytes.modelo.Producto;
 import java.util.List;
@@ -29,12 +29,12 @@ public class ProductoBL extends BaseBL implements IBaseBL<Producto,String>{
 
     @Override
     public void delete(String key) {
-        this.getDAO("cr.or.uccaep.domain.Producto").delete(key);  
+        this.getDAO("cr.kaytes.modelo.Producto").delete(key);  
     }
 
     @Override
     public List<Producto> findAll() {
-        return this.getDAO("cr.or.uccaep.domain.Producto").findAll();
+        return this.getDAO("cr.kaytes.modelo.Producto").findAll();
     }
 
 

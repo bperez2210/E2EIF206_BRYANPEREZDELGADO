@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cr.kayles.bl;
+package cr.kaytes.bl;
 import cr.kaytes.dao.*;
 import java.util.LinkedHashMap;
 /**

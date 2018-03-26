@@ -1,5 +1,5 @@
 package cr.kaytes.modelo;
-// Generated Mar 25, 2018 5:41:35 PM by Hibernate Tools 4.3.1
+// Generated 26/03/2018 02:34:33 AM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -31,11 +31,11 @@ public class Producto  implements java.io.Serializable {
     }
 
 	
-    public Producto(int pkIdproducto, String tipoProducto) {
+    public Producto(String tipoProducto) {
         this.pkIdproducto = pkIdproducto;
         this.tipoProducto = tipoProducto;
     }
-    public Producto(int pkIdproducto, String tipoProducto, Set<Articulo> articulos) {
+    public Producto(String tipoProducto, Set<Articulo> articulos) {
        this.pkIdproducto = pkIdproducto;
        this.tipoProducto = tipoProducto;
        this.articulos = articulos;

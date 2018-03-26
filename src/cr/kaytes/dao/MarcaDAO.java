@@ -67,7 +67,7 @@ public class MarcaDAO extends HibernateUtil implements IBaseDAO<Marca,Integer>{
         List<Marca> empresas;
         try{
             iniciarOperacion();
-            empresas = getSesion().createQuery("FROM Marca order by emp_nombre").list();
+            empresas = getSesion().createQuery("FROM Marca").list();
         }finally{
             getSesion().close();
         }

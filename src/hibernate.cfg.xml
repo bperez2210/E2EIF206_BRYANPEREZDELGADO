@@ -47,8 +47,8 @@ Contributor(s):
     <property name="hibernate.connection.username">admin</property>
     <property name="hibernate.connection.password">kaytes</property>
     <mapping resource="cr/kaytes/modelo/Articulo.hbm.xml"/>
-    <mapping resource="cr/kaytes/modelo/Usuario.hbm.xml"/>
     <mapping resource="cr/kaytes/modelo/Producto.hbm.xml"/>
+    <mapping resource="cr/kaytes/modelo/Usuario.hbm.xml"/>
     <mapping resource="cr/kaytes/modelo/Marca.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

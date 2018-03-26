@@ -1,8 +1,7 @@
 package cr.kaytes.modelo;
-// Generated Mar 25, 2018 5:41:35 PM by Hibernate Tools 4.3.1
+// Generated 26/03/2018 02:34:33 AM by Hibernate Tools 4.3.1
 
 
-import java.math.BigDecimal;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -22,32 +21,30 @@ public class Articulo  implements java.io.Serializable {
 
 
      private int pkIdarticulo;
-     private Marca marca;
-     private Producto producto;
+     private int  producto;
+     private int  marca;
      private int codigo;
      private String talla;
      private String genero;
      private String color;
-     private BigDecimal precio;
+     private double precio;
      private String estado;
 
     public Articulo() {
     }
 
 	
-    public Articulo(int pkIdarticulo, Marca marca, Producto producto, int codigo, String color, BigDecimal precio, String estado) {
-        this.pkIdarticulo = pkIdarticulo;
-        this.marca = marca;
+    public Articulo(int  producto, int  marca, int codigo, String color, double precio, String estado) {
         this.producto = producto;
+        this.marca = marca;
         this.codigo = codigo;
         this.color = color;
         this.precio = precio;
         this.estado = estado;
     }
-    public Articulo(int pkIdarticulo, Marca marca, Producto producto, int codigo, String talla, String genero, String color, BigDecimal precio, String estado) {
-       this.pkIdarticulo = pkIdarticulo;
-       this.marca = marca;
+    public Articulo(int  producto, int  marca, int codigo, String talla, String genero, String color, double precio, String estado) {
        this.producto = producto;
+       this.marca = marca;
        this.codigo = codigo;
        this.talla = talla;
        this.genero = genero;
@@ -68,24 +65,24 @@ public class Articulo  implements java.io.Serializable {
         this.pkIdarticulo = pkIdarticulo;
     }
 
-@ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="FK_IDMARCA", nullable=false)
-    public Marca getMarca() {
-        return this.marca;
-    }
-    
-    public void setMarca(Marca marca) {
-        this.marca = marca;
-    }
 
-@ManyToOne(fetch=FetchType.LAZY)
-    @JoinColumn(name="FK_IDPRODUCTO", nullable=false)
-    public Producto getProducto() {
+    @Column(name="FK_IDPRODUCTO", nullable=false)
+    public int  getProducto() {
         return this.producto;
     }
     
-    public void setProducto(Producto producto) {
+    public void setProducto(int  producto) {
         this.producto = producto;
+    }
+
+
+    @Column(name="FK_IDMARCA", nullable=false)
+    public int  getMarca() {
+        return this.marca;
+    }
+    
+    public void setMarca(int  marca) {
+        this.marca = marca;
     }
 
     
@@ -129,12 +126,12 @@ public class Articulo  implements java.io.Serializable {
     }
 
     
-    @Column(name="PRECIO", nullable=false, precision=6, scale=4)
-    public BigDecimal getPrecio() {
+    @Column(name="PRECIO", nullable=false, precision=126, scale=0)
+    public double getPrecio() {
         return this.precio;
     }
     
-    public void setPrecio(BigDecimal precio) {
+    public void setPrecio(double precio) {
         this.precio = precio;
     }
 

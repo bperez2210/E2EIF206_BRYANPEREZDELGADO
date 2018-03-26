@@ -67,7 +67,7 @@ public class ProductoDAO extends HibernateUtil implements IBaseDAO<Producto,Inte
         List<Producto> empresas;
         try{
             iniciarOperacion();
-            empresas = getSesion().createQuery("FROM Producto order by emp_nombre").list();
+            empresas = getSesion().createQuery("FROM Producto").list();
         }finally{
             getSesion().close();
         }

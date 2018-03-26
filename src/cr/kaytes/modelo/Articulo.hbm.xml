@@ -1,19 +1,19 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated Mar 25, 2018 5:41:35 PM by Hibernate Tools 4.3.1 -->
+<!-- Generated 26/03/2018 02:34:34 AM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="cr.kaytes.modelo.Articulo" table="ARTICULO" schema="ADMIN" optimistic-lock="version">
         <id name="pkIdarticulo" type="int">
             <column name="PK_IDARTICULO" precision="5" scale="0" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="marca" class="cr.kaytes.modelo.Marca" fetch="select">
-            <column name="FK_IDMARCA" precision="5" scale="0" not-null="true" />
-        </many-to-one>
-        <many-to-one name="producto" class="cr.kaytes.modelo.Producto" fetch="select">
+        <property name="producto" type="int">
             <column name="FK_IDPRODUCTO" precision="5" scale="0" not-null="true" />
-        </many-to-one>
+        </property >
+        <property  name="marca" type="int">
+            <column name="FK_IDMARCA" precision="5" scale="0" not-null="true" />
+        </property >
         <property name="codigo" type="int">
             <column name="CODIGO" precision="5" scale="0" not-null="true" />
         </property>
@@ -26,8 +26,8 @@
         <property name="color" type="string">
             <column name="COLOR" length="8" not-null="true" />
         </property>
-        <property name="precio" type="big_decimal">
-            <column name="PRECIO" precision="6" scale="4" not-null="true" />
+        <property name="precio" type="double">
+            <column name="PRECIO" precision="126" scale="0" not-null="true" />
         </property>
         <property name="estado" type="string">
             <column name="ESTADO" length="15" not-null="true" />

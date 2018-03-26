@@ -67,7 +67,7 @@ public class ArticuloDAO extends HibernateUtil implements IBaseDAO<Articulo,Inte
         List<Articulo> empresas;
         try{
             iniciarOperacion();
-            empresas = getSesion().createQuery("FROM Articulo order by emp_nombre").list();
+            empresas = getSesion().createQuery("FROM Marca").list();
         }finally{
             getSesion().close();
         }

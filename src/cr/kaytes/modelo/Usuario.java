@@ -1,5 +1,5 @@
 package cr.kaytes.modelo;
-// Generated Mar 25, 2018 5:41:35 PM by Hibernate Tools 4.3.1
+// Generated 26/03/2018 02:34:33 AM by Hibernate Tools 4.3.1
 
 
 import javax.persistence.Column;
@@ -26,7 +26,7 @@ public class Usuario  implements java.io.Serializable {
     public Usuario() {
     }
 
-    public Usuario(int pkIdusuario, String nombreUsuario, String password) {
+    public Usuario(String nombreUsuario, String password) {
        this.pkIdusuario = pkIdusuario;
        this.nombreUsuario = nombreUsuario;
        this.password = password;

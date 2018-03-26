@@ -1,5 +1,5 @@
 package cr.kaytes.modelo;
-// Generated Mar 25, 2018 5:41:35 PM by Hibernate Tools 4.3.1
+// Generated 26/03/2018 02:34:33 AM by Hibernate Tools 4.3.1
 
 
 import java.util.HashSet;
@@ -31,11 +31,11 @@ public class Marca  implements java.io.Serializable {
     }
 
 	
-    public Marca(int pkIdmarca, String nombre) {
+    public Marca(String nombre) {
         this.pkIdmarca = pkIdmarca;
         this.nombre = nombre;
     }
-    public Marca(int pkIdmarca, String nombre, Set<Articulo> articulos) {
+    public Marca(String nombre, Set<Articulo> articulos) {
        this.pkIdmarca = pkIdmarca;
        this.nombre = nombre;
        this.articulos = articulos;

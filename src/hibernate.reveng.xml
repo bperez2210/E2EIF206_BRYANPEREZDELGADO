@@ -41,8 +41,8 @@ Contributor(s):
 -->
 <hibernate-reverse-engineering>
   <schema-selection match-schema="ADMIN"/>
-  <table-filter match-name="PRODUCTO"/>
   <table-filter match-name="ARTICULO"/>
-  <table-filter match-name="MARCA"/>
   <table-filter match-name="USUARIO"/>
+  <table-filter match-name="MARCA"/>
+  <table-filter match-name="PRODUCTO"/>
 </hibernate-reverse-engineering>
