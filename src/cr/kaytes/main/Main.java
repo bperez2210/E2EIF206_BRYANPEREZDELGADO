@@ -10,7 +10,7 @@ import cr.kaytes.vista.Inventario;
  *
  * @author bperez2210
  */
-public class CrPrueba {
+public class Main {
     /**
      * @param args the command line arguments
      */
