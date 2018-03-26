@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cr.kaytes.dao;
+package cr.kaytes.test;
 
 /**
  *
  * @author bperez2210
  */
-public interface BaseDAO {
+public class TestProducto {
     
 }
