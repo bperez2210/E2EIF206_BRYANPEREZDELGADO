@@ -20,7 +20,7 @@ public class Inventario extends javax.swing.JFrame {
     
     public Inventario(String title) {
         initComponents();
-        setTitle(title);
+        super.setTitle(title);
         
     }
 
@@ -34,24 +34,24 @@ public class Inventario extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel7 = new javax.swing.JPanel();
-        jButton11 = new javax.swing.JButton();
+        jbtnRegistrar = new javax.swing.JButton();
         jSeparator13 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
         jSeparator4 = new javax.swing.JSeparator();
         jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jButton12 = new javax.swing.JButton();
+        jLCantidad = new javax.swing.JLabel();
+        jbtnEliminar = new javax.swing.JButton();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
+        jTable = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jComboBox10 = new javax.swing.JComboBox<>();
-        jButton10 = new javax.swing.JButton();
+        jCBBuscar = new javax.swing.JComboBox<>();
+        jbtnBuscar = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
-        jComboBox11 = new javax.swing.JComboBox<>();
-        jComboBox12 = new javax.swing.JComboBox<>();
-        jTextField4 = new javax.swing.JTextField();
+        jCBOrdenar = new javax.swing.JComboBox<>();
+        jCBMostrar = new javax.swing.JComboBox<>();
+        jTFBuscar = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel3 = new javax.swing.JLabel();
@@ -60,12 +60,12 @@ public class Inventario extends javax.swing.JFrame {
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
 
-        jButton11.setBackground(new java.awt.Color(153, 255, 153));
-        jButton11.setForeground(new java.awt.Color(0, 0, 0));
-        jButton11.setText("REGISTRAR");
-        jButton11.addActionListener(new java.awt.event.ActionListener() {
+        jbtnRegistrar.setBackground(new java.awt.Color(153, 255, 153));
+        jbtnRegistrar.setForeground(new java.awt.Color(0, 0, 0));
+        jbtnRegistrar.setText("REGISTRAR");
+        jbtnRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton11ActionPerformed(evt);
+                jbtnRegistrarActionPerformed(evt);
             }
         });
 
@@ -78,9 +78,9 @@ public class Inventario extends javax.swing.JFrame {
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cr/kaytes/imagenes/UI-box.png"))); // NOI18N
         jLabel2.setText("  Articulos Encontrados:");
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 204));
-        jLabel1.setText("22");
+        jLCantidad.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLCantidad.setForeground(new java.awt.Color(0, 0, 204));
+        jLCantidad.setText("22");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -92,7 +92,7 @@ public class Inventario extends javax.swing.JFrame {
                 .addGap(105, 105, 105)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
+                .addComponent(jLCantidad, javax.swing.GroupLayout.DEFAULT_SIZE, 27, Short.MAX_VALUE)
                 .addGap(93, 93, 93))
         );
         jPanel1Layout.setVerticalGroup(
@@ -104,21 +104,21 @@ public class Inventario extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(jLabel1)))
+                            .addComponent(jLCantidad)))
                     .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(9, 9, 9))
         );
 
-        jButton12.setBackground(new java.awt.Color(255, 102, 102));
-        jButton12.setForeground(new java.awt.Color(0, 0, 0));
-        jButton12.setText("ELIMINAR");
-        jButton12.addActionListener(new java.awt.event.ActionListener() {
+        jbtnEliminar.setBackground(new java.awt.Color(255, 102, 102));
+        jbtnEliminar.setForeground(new java.awt.Color(0, 0, 0));
+        jbtnEliminar.setText("ELIMINAR");
+        jbtnEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton12ActionPerformed(evt);
+                jbtnEliminarActionPerformed(evt);
             }
         });
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
+        jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
@@ -173,11 +173,11 @@ public class Inventario extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Código", "Marca", "Tipo", "Talla", "Género", "Color", "Precio", "Descripción"
+                "Código", "Marca", "Tipo", "Talla", "Género", "Color", "Precio", "Estado"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Float.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
                 false, true, true, false, true, true, true, true
@@ -191,7 +191,7 @@ public class Inventario extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane4.setViewportView(jTable4);
+        jScrollPane4.setViewportView(jTable);
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -199,13 +199,13 @@ public class Inventario extends javax.swing.JFrame {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
-                .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jbtnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
-                .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jbtnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47))
             .addComponent(jScrollPane4, javax.swing.GroupLayout.Alignment.TRAILING)
         );
@@ -219,31 +219,31 @@ public class Inventario extends javax.swing.JFrame {
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                             .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jbtnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addContainerGap()))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                        .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jbtnEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
 
-        jPanel2.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel2.setBackground(new java.awt.Color(0, 102, 153));
 
         jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cr/kaytes/imagenes/logo2.png"))); // NOI18N
 
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Buscar :");
 
-        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Código", "Marca", "Cantidad", "Color" }));
+        jCBBuscar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Código", "Marca", "Cantidad", "Color" }));
 
-        jButton10.setText("Buscar");
+        jbtnBuscar.setText("Buscar");
 
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Mostrar :");
 
-        jComboBox11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Registro", "Código", "Marca", "Cantidad", "Color" }));
+        jCBOrdenar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Registro", "Código", "Marca", "Cantidad", "Color" }));
 
-        jComboBox12.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TODOS", "VENDIDO", "EXHIBICIÓN", "APARTADO", "BODEGA", "CAMBIO" }));
+        jCBMostrar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "TODOS", "VENDIDO", "EXHIBICIÓN", "APARTADO", "BODEGA", "CAMBIO" }));
 
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Ordenar :");
@@ -260,31 +260,32 @@ public class Inventario extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(6, 6, 6)
+                                .addGap(30, 30, 30)
                                 .addComponent(jLabel13))
                             .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox10, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox12, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jCBBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jCBMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(17, 17, 17)
                                 .addComponent(jLabel12)
                                 .addGap(7, 7, 7)
-                                .addComponent(jComboBox11, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jCBOrdenar, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(9, 9, 9)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jTFBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton10))))
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(65, 65, 65)
+                                .addComponent(jbtnBuscar))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 419, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(59, 59, 59)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 120, Short.MAX_VALUE)
                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -302,9 +303,9 @@ public class Inventario extends javax.swing.JFrame {
                         .addGap(20, 20, 20)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel11)
-                            .addComponent(jComboBox10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton10))
+                            .addComponent(jCBBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTFBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jbtnBuscar))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
@@ -312,9 +313,9 @@ public class Inventario extends javax.swing.JFrame {
                                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jComboBox11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jCBOrdenar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel12)
-                                    .addComponent(jComboBox12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jCBMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel13))))
                         .addContainerGap(24, Short.MAX_VALUE))))
         );
@@ -341,26 +342,23 @@ public class Inventario extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+    private void jbtnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnRegistrarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton11ActionPerformed
+    }//GEN-LAST:event_jbtnRegistrarActionPerformed
 
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+    private void jbtnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnEliminarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton12ActionPerformed
+    }//GEN-LAST:event_jbtnEliminarActionPerformed
 
     /**
      * @param args the command line arguments
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JComboBox<String> jComboBox10;
-    private javax.swing.JComboBox<String> jComboBox11;
-    private javax.swing.JComboBox<String> jComboBox12;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JComboBox<String> jCBBuscar;
+    private javax.swing.JComboBox<String> jCBMostrar;
+    private javax.swing.JComboBox<String> jCBOrdenar;
+    private javax.swing.JLabel jLCantidad;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -374,7 +372,10 @@ public class Inventario extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator13;
     private javax.swing.JSeparator jSeparator4;
-    private javax.swing.JTable jTable4;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTFBuscar;
+    private javax.swing.JTable jTable;
+    private javax.swing.JButton jbtnBuscar;
+    private javax.swing.JButton jbtnEliminar;
+    private javax.swing.JButton jbtnRegistrar;
     // End of variables declaration//GEN-END:variables
 }

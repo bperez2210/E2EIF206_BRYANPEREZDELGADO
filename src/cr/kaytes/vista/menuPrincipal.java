@@ -49,7 +49,7 @@ public class menuPrincipal extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel3.setBackground(new java.awt.Color(102, 102, 102));
+        jPanel3.setBackground(new java.awt.Color(0, 102, 153));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cr/kaytes/imagenes/logo2.png"))); // NOI18N
 

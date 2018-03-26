@@ -15,7 +15,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Inventario p1 = new Inventario("Sistema de Administración");
+        Inventario p1 = new Inventario("Kaytes Sport - Inventario");
         p1.setVisible(true);
     }
     
