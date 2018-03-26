@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
-<!-- Generated 23/03/2018 10:37:52 AM by Hibernate Tools 4.3.1 -->
+<!-- Generated Mar 25, 2018 5:41:35 PM by Hibernate Tools 4.3.1 -->
 <hibernate-mapping>
     <class name="cr.kaytes.modelo.Articulo" table="ARTICULO" schema="ADMIN" optimistic-lock="version">
         <id name="pkIdarticulo" type="int">
@@ -17,8 +17,8 @@
         <property name="codigo" type="int">
             <column name="CODIGO" precision="5" scale="0" not-null="true" />
         </property>
-        <property name="talla" type="java.lang.Byte">
-            <column name="TALLA" precision="2" scale="0" />
+        <property name="talla" type="string">
+            <column name="TALLA" length="2" />
         </property>
         <property name="genero" type="string">
             <column name="GENERO" length="15" />

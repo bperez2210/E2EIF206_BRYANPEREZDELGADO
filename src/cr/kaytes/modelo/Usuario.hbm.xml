@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Mar 25, 2018 5:41:35 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="cr.kaytes.modelo.Usuario" table="USUARIO" schema="ADMIN" optimistic-lock="version">
+        <id name="pkIdusuario" type="int">
+            <column name="PK_IDUSUARIO" precision="5" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombreUsuario" type="string">
+            <column name="NOMBRE_USUARIO" length="15" not-null="true" unique="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="PASSWORD" length="8" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -44,4 +44,5 @@ Contributor(s):
   <table-filter match-name="PRODUCTO"/>
   <table-filter match-name="ARTICULO"/>
   <table-filter match-name="MARCA"/>
+  <table-filter match-name="USUARIO"/>
 </hibernate-reverse-engineering>
